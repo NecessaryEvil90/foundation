@@ -27,7 +27,7 @@ class TemplateTranslationHandler implements TranslationHandlerInterface
     /**
      * @var KernelInterface
      */
-    private $kernel;
+    protected $kernel;
 
     /**
      * @var ExtractorInterface

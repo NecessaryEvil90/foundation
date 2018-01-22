@@ -82,6 +82,23 @@
             <argument type="service" id="modera_backend_translations_tool.extractor.extjs_extractor" />
         </service>
 
+        <service id="modera_backend_translations_tool.handling.mjr_translation_handler"
+                 class="Modera\BackendTranslationsToolBundle\Handling\MjrTranslationHandler"
+                 abstract="true"
+                 public="false">
+
+            <argument type="service" id="kernel" />
+            <argument type="service" id="translation.loader" />
+            <argument type="service" id="modera_backend_translations_tool.extractor.extjs_extractor" />
+        </service>
+
+        <service parent="modera_backend_translations_tool.handling.mjr_translation_handler">
+
+            <argument>ModeraBackendTranslationsToolBundle</argument>
+
+            <tag name="modera_translations.translation_handler" />
+        </service>
+
         <service parent="modera_translations.handling.php_classes_translation_handler">
 
             <argument>ModeraBackendTranslationsToolBundle</argument>
